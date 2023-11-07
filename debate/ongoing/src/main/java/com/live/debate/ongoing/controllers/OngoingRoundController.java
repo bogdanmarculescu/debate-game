@@ -20,4 +20,9 @@ public class OngoingRoundController {
         return ongoingRoundService.completeRound();
     }
 
+    @GetMapping("/secTest")
+    String solveSecRound(){
+        return "Sec: " + ongoingRoundService.completeRound();
+    }
+
 }

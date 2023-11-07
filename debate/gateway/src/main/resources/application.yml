@@ -1,11 +1,18 @@
 server:
-  port: 8000
+  port: 9000
 
 spring:
   application:
     name: gateway
   config:
     import: "optional:consul:"
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://0.0.0.0:8080/realms/microservices
+
   cloud:
     loadbalancer:
       ribbon:

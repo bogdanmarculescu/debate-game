@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "6928690d-6412-4dc5-9026-a8f4f9e1f180",
+		"name": "Keycloak stuff",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21712154"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/realms/microservices/protocol/openid-connect/token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "login-app",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "bmr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "bmr1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/microservices/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"microservices",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "get token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/realms/microservices/protocol/openid-connect/token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "login-app",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxYmM0NmNhMC1mMTlmLTQwOTktYjY4Mi05MzMzYmM5OTg5ZTYifQ.eyJleHAiOjE2OTkzNjA3OTYsImlhdCI6MTY5OTM1ODk5NiwianRpIjoiMjA2ZGY1YzctMDk4NC00NTlmLTgxNjItZGQ2OWQ3ZjMxZTlmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9taWNyb3NlcnZpY2VzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9taWNyb3NlcnZpY2VzIiwic3ViIjoiYjRjZDAzN2EtYzJlNy00MmRmLWJmNDctMzFhMTU0YWQ2MGVlIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImxvZ2luLWFwcCIsInNlc3Npb25fc3RhdGUiOiI0ODA3YjlhYy04NTlkLTQxMDItOTZhNC1iZGZmZjMzNmE3NTAiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiI0ODA3YjlhYy04NTlkLTQxMDItOTZhNC1iZGZmZjMzNmE3NTAifQ.IGcDrW6m-U_cGchzksfKXWj8M3pMcrGq99HAXQDvOoM",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/microservices/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"microservices",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "use refresh token"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/ongoing/secTest",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "pJyiheXE6DAM2BdnScfFvuunLosNh665",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "test_client",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://0.0.0.0:8080/realms/microservices/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "login-app-token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/ongoing/secTest",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"ongoing",
+						"secTest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/ongoing/test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/ongoing/test",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"ongoing",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
