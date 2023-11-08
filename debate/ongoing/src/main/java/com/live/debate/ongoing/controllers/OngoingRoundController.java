@@ -20,4 +20,10 @@ public class OngoingRoundController {
         return ongoingRoundService.completeRound();
     }
 
+
+    @GetMapping("/secTest")
+    String solveRoundwithSecurity(){
+        return "Secure: " + ongoingRoundService.completeRound();
+    }
+
 }
